@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume - Surya Marisetty">
+    <title>Resume - Surya Marisetty</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 20px;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #1e40af;
+            text-decoration: underline;
+        }
+
+        .divider {
+            color: #ccc;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e7ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .degree {
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .university {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .location {
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* Summary */
+        .summary-text {
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-group {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .skill-group-title {
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(16, 185, 129, 0.1));
+            color: #2563eb;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(16, 185, 129, 0.2));
+            border-color: #2563eb;
+        }
+
+        /* Projects */
+        .project-item {
+            margin-bottom: 20px;
+        }
+
+        .project-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #222;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-description {
+            color: #666;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .tech-badge {
+            background: #f0f4ff;
+            color: #2563eb;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e7ff;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .contact-info a {
+                color: #2563eb;
+                text-decoration: underline;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .name {
+                font-size: 24px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Button */
+        .no-print {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #1e40af;
+        }
+
+        .btn-secondary {
+            background-color: #666;
+        }
+
+        .btn-secondary:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="no-print">
+            <button class="btn" onclick="window.print()">Print Resume</button>
+            <a href="index.html" class="btn btn-secondary">Back to Portfolio</a>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="name">SURYA MARISETTY</div>
+            <div class="title">AI/ML Engineer | Python Developer | Full Stack Developer</div>
+            <div class="contact-info">
+                <span>📧 <a href="mailto:suryamarisetty10@gmail.com">suryamarisetty10@gmail.com</a></span>
+                <span class="divider">|</span>
+                <span>📱 <a href="tel:+918790071729">+91 87900 71729</a></span>
+                <span class="divider">|</span>
+                <span>🔗 <a href="https://github.com/200726-surya" target="_blank">GitHub</a></span>
+                <span class="divider">|</span>
+                <span>💼 <a href="https://www.linkedin.com/in/surya-charan-marisetty-70ba9637b/" target="_blank">LinkedIn</a></span>
+                <span class="divider">|</span>
+                <span>📍 Ongole, Andhra Pradesh, India</span>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+            <p class="summary-text">
+                Aspiring AI/ML engineer passionate about building intelligent systems and solving real-world problems through machine learning and data science. Currently pursuing Computer Science Engineering with specialization in Artificial Intelligence and Machine Learning at Manav Rachna University. Strong foundation in C programming, web development, and modern technologies with dedication to creating impactful solutions through technology.
+            </p>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="education-item">
+                <div class="degree">B.Tech in Computer Science Engineering (AIML Specialization)</div>
+                <div class="university">Manav Rachna University</div>
+                <div class="location">Delhi, India</div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <div class="skill-group-title">Programming Languages</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-title">Web Development</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-title">Design & Tools</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AutoCAD</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">VS Code</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-title">Core Competencies</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Algorithm Design</span>
+                        <span class="skill-tag">Code Quality</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <div class="section-title">Key Projects</div>
+
+            <div class="project-item">
+                <div class="project-title">🌐 Web Development Portfolio</div>
+                <div class="project-description">
+                    Developed responsive web applications using HTML5, CSS3, and JavaScript. Created modern, user-friendly interfaces focusing on clean code and best practices. Deployed projects on Netlify for production use.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">CSS</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Netlify</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">🐍 Python Projects</div>
+                <div class="project-description">
+                    Worked on various Python projects including data processing, automation scripts, and algorithm implementations. Focused on writing efficient and maintainable code with proper documentation.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Data Processing</span>
+                    <span class="tech-badge">Automation</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">⚙️ C Programming & System Design</div>
+                <div class="project-description">
+                    Reinforced C programming fundamentals including input handling, control flow, and memory management. Developed understanding of data structures and algorithms for efficient problem solving.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-badge">C</span>
+                    <span class="tech-badge">Data Structures</span>
+                    <span class="tech-badge">Algorithms</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">📐 AutoCAD Design Projects</div>
+                <div class="project-description">
+                    Proficient in AutoCAD for technical design and engineering drawings. Created precise technical documentation and design specifications for various projects.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-badge">AutoCAD</span>
+                    <span class="tech-badge">Technical Drawing</span>
+                    <span class="tech-badge">Design</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strengths -->
+        <div class="section">
+            <div class="section-title">Key Strengths</div>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <div class="skill-tags">
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Analytical Thinking</span>
+                        <span class="skill-tag">Quick Learner</span>
+                        <span class="skill-tag">Team Collaboration</span>
+                        <span class="skill-tag">Code Quality</span>
+                        <span class="skill-tag">Documentation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2026 Surya Marisetty. All rights reserved. | For more information, visit <a href="index.html" style="color: #2563eb;">my portfolio</a></p>
+        </div>
+    </div>
+</body>
+</html>
